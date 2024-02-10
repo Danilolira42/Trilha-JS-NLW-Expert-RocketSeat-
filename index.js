@@ -1,117 +1,132 @@
 const perguntas = [
-    {
-      pergunta: "Qual é a finalidade do comando 'console.log()' em JavaScript?",
+  {
+      pergunta: "Qual jogador é conhecido como 'The Last Dance' e ganhou 6 campeonatos da NBA com o Chicago Bulls nos anos 90?",
       respostas: [
-        "Exibir uma mensagem de erro",
-        "Imprimir dados no console",
-        "Criar uma variável"
+          "Magic Johnson",
+          "Michael Jordan",
+          "Larry Bird"
       ],
       correta: 1
-    },
-    {
-      pergunta: "Qual é a função do operador '===' em comparações em JavaScript?",
+  },
+  {
+      pergunta: "Qual time da NBA conquistou o maior número de títulos na história da liga?",
       respostas: [
-        "Comparação de valores sem considerar o tipo",
-        "Atribuição de valores",
-        "Comparação estrita de valores e tipos"
-      ],
-      correta: 2
-    },
-    {
-      pergunta: "Como se declara uma variável em JavaScript?",
-      respostas: [
-        "let myVar;",
-        "const myVar = 10;",
-        "ambas as opções acima estão corretas"
-      ],
-      correta: 2
-    },
-    {
-      pergunta: "O que é uma função em JavaScript?",
-      respostas: [
-        "Um tipo de dado",
-        "Um bloco de código reutilizável",
-        "Uma variável global"
+          "Los Angeles Lakers",
+          "Boston Celtics",
+          "Chicago Bulls"
       ],
       correta: 1
-    },
-    {
-      pergunta: "Qual é a diferença entre 'let' e 'const' na declaração de variáveis?",
+  },
+  {
+      pergunta: "Quem é o jogador recordista de pontos em uma única partida na história da NBA?",
       respostas: [
-        "Nenhuma, são sinônimos",
-        "let é usado para valores constantes, const para variáveis",
-        "let permite reatribuição, const cria variáveis imutáveis"
-      ],
-      correta: 2
-    },
-    {
-      pergunta: "O que é o DOM em JavaScript?",
-      respostas: [
-        "Um método de criptografia",
-        "Um modelo de objeto para manipular documentos HTML",
-        "Uma linguagem de programação"
+          "Kobe Bryant",
+          "Wilt Chamberlain",
+          "Michael Jordan"
       ],
       correta: 1
-    },
-    {
-      pergunta: "Como se realiza uma iteração sobre os elementos de um array em JavaScript?",
+  },
+  {
+      pergunta: "Qual jogador ganhou o maior número de prêmios de MVP na história da NBA?",
       respostas: [
-        "Usando a estrutura 'if-else'",
-        "Com a declaração 'switch'",
-        "Utilizando loops como 'for' ou 'forEach'"
+          "LeBron James",
+          "Michael Jordan",
+          "Kareem Abdul-Jabbar"
       ],
       correta: 2
-    },
-    {
-      pergunta: "O que é o JSON em JavaScript?",
+  },
+  {
+      pergunta: "Quantos títulos da NBA o San Antonio Spurs conquistou?",
       respostas: [
-        "Um método de formatação de texto",
-        "Uma linguagem de estilização",
-        "Um formato de dados leve e intercambiável"
-      ],
-      correta: 2
-    },
-    {
-      pergunta: "Qual é a diferença entre 'null' e 'undefined' em JavaScript?",
-      respostas: [
-        "São iguais, usados de forma intercambiável",
-        "'null' representa a ausência de valor, 'undefined' é atribuído explicitamente",
-        "Ambos representam valores vazios"
+          "3",
+          "5",
+          "7"
       ],
       correta: 1
-    },
-    {
-      pergunta: "Como se adiciona um evento a um elemento HTML usando JavaScript?",
+  },
+  {
+      pergunta: "Quem é o treinador com mais títulos de campeonato da NBA?",
       respostas: [
-        "Apenas com CSS",
-        "Usando o atributo 'event'",
-        "Através do método 'addEventListener'"
+          "Phil Jackson",
+          "Red Auerbach",
+          "Gregg Popovich"
+      ],
+      correta: 0
+  },
+  {
+      pergunta: "Qual jogador tem o recorde de maior número de triplos-duplos na história da NBA?",
+      respostas: [
+          "Magic Johnson",
+          "Russell Westbrook",
+          "LeBron James"
+      ],
+      correta: 1
+  },
+  {
+      pergunta: "Qual foi o primeiro time da NBA a conquistar três títulos consecutivos?",
+      respostas: [
+          "Chicago Bulls",
+          "Los Angeles Lakers",
+          "Boston Celtics"
       ],
       correta: 2
-    },
-  ];
-  
-  const quiz = document.querySelector('#quiz')
-  const template = document.querySelector('template')
-  
-  
-  // loop ou laço de repetição
-  for(const item of perguntas) {
-    const quizItem = template.content.cloneNode(true)
-    quizItem.querySelector('h3').textContent = item.pergunta
-    
-    for(let resposta of item.respostas) {
-      const dt = quizItem.querySelector('dl dt').cloneNode(true)
-      dt.querySelector('span').textContent = resposta
-  
-      quizItem.querySelector('dl').appendChild(dt)
-    }
-  
-    
-    quizItem.querySelector('dl dt').remove()
-    
-    
-    // coloca a pergunta na tela
-    quiz.appendChild(quizItem)
+  },
+  {
+      pergunta: "Quem foi o primeiro jogador a ser draftado na história da NBA?",
+      respostas: [
+          "Bill Russell",
+          "Wilt Chamberlain",
+          "Oscar Robertson"
+      ],
+      correta: 1
+  },
+  {
+      pergunta: "Qual é o recorde de pontos em uma única temporada da NBA?",
+      respostas: [
+          "2832",
+          "4029",
+          "3362"
+      ],
+      correta: 1
   }
-  
+];
+
+ 
+const quiz = document.querySelector('#quiz')
+const template = document.querySelector('template')
+
+const corretas = new Set()
+const totalDePerguntas = perguntas.length
+const mostrarTotal = document.querySelector('#acertos span')
+mostrarTotal.textContent = corretas.size + ' de ' + totalDePerguntas
+
+// loop ou laço de repetição
+for (const item of perguntas) {
+  const quizItem = template.content.cloneNode(true)
+  quizItem.querySelector('h3').textContent = item.pergunta
+
+  for (let resposta of item.respostas) {
+    const dt = quizItem.querySelector('dl dt').cloneNode(true)
+    dt.querySelector('span').textContent = resposta
+    dt.querySelector('input').setAttribute('name', 'pergunta-' + perguntas.indexOf(item))
+    dt.querySelector('input').value = item.respostas.indexOf(resposta)
+    dt.querySelector('input').onchange = (event) => {
+      const estaCorreta = event.target.value == item.correta
+
+      corretas.delete(item)
+      if (estaCorreta) {
+        corretas.add(item)
+      }
+
+      mostrarTotal.textContent = corretas.size + ' de ' + totalDePerguntas
+    }
+    quizItem.querySelector('dl').appendChild(dt)
+  }
+
+
+  quizItem.querySelector('dl dt').remove()
+
+
+  // coloca a pergunta na tela
+  quiz.appendChild(quizItem)
+}

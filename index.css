@@ -1,0 +1,208 @@
+            
+            @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+
+
+        *,:root{
+            
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+                font-family: 'inter',sans-serif;    
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing:grayscale;
+                -webkit-text-size-adjust: 100%;
+
+
+            }
+
+        body{
+            margin: 0px;
+            width:100%;
+            height: 50%;
+            background-image: url(./BolaNBA.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            overflow-x:hidden;
+
+            
+            }
+
+        header {
+        
+            margin: 0px 0px 25px ;
+            padding: 15px;
+            padding-top: 15px;
+            padding-bottom: 10px;
+            text-align: center;
+            border-bottom: 1px solid white;
+            font-size: 20px;
+            width: 100%;
+            display: inline-block;
+            border-radius: 5px;
+        }
+    
+        header h1{
+
+            font-size: 40px;
+            text-shadow:  0.1em  0.1em  0.04em #b1b0b0;
+            color: white;
+            text-indent: initial;
+        }
+
+    .N{
+        
+        color: rgb(0, 0, 0);
+        letter-spacing: 2px;
+        text-shadow:  0.1em  0.1em  0.04em #acacac;
+        font-family: sans-serif;
+    }
+
+    .B{
+        color: rgb(44, 18, 192);
+        letter-spacing: 2px;
+        text-shadow:  0.1em  0.1em  0.04em #c0c0c0;
+        font-family: sans-serif;
+    }
+
+    .A{
+        color: rgb(233, 17, 17);
+        letter-spacing: 2px;
+        text-align: justify;
+        text-shadow:  0.1em  0.1em  0.04em #acacac;
+        font-family: sans-serif;
+    }
+        
+    main{
+            
+            padding:15px;
+            max-width: 640px;
+            margin: 0px auto 40px;
+            font-size: 13px;
+            color:white;
+            
+
+            }
+        #quiz {
+            counter-reset: quiz-item;
+            margin: 5px;
+            
+        }
+
+        .quiz-item h3:before{
+            padding: 3px;
+            counter-increment: quiz-item;
+            content: counter(quiz-item);
+            width: 21px;
+            height: 21px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            border-radius: 50%;
+            background-color: #ffff;
+            color: #15151a;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .quiz-item{
+            
+            margin: 20px;
+            text-align:justify;
+            border: 1px solid white;
+            border-radius: 10px;
+            }
+
+        .quiz-item h3 {
+            padding: 0px;
+            margin: 7px;
+            font-size: 18px;
+            display: flex;
+            gap: 5px;
+            
+        }
+
+        .quiz-item dl {
+            padding: 5px 5px;
+        
+        }
+
+        .quiz-item dl dt {
+            padding: 5px 5px;
+            margin-bottom: 1px;
+            font-size: 15px;
+            line-height: 20px;
+            letter-spacing: 0px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+    input{
+        all:unset; 
+        border: 1px solid #ffffff;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    input:checked{
+    border: 1px solid rgb(255, 255, 255);
+
+    }
+
+    input:checked::before{
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50px;    
+    }
+
+    #acertos{
+
+        text-align : center;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-image: url(./download.jpeg);
+        padding: 10px;
+        background-color: #15151a;
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 42px;
+        font-size: 15px;
+        font-weight: bold;
+        font-variant: small-caps;
+                        
+                        
+            }
+
+            .LogoNBA{
+
+                width: 100px;
+                margin: 12px 0px 0px 15px;
+                border-radius: 30px;
+                display: flex;
+                padding: 15px;
+                cursor: pointer;
+                
+            }
+
+            a:hover{
+            
+                cursor: pointer;
+                display: flex;
+                padding: 10px;
+                
+            }
+        
+            
